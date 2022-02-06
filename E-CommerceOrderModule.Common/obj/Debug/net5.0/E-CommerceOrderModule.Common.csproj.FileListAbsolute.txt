@@ -1,0 +1,12 @@
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\bin\Debug\net5.0\E-CommerceOrderModule.Common.deps.json
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\bin\Debug\net5.0\E-CommerceOrderModule.Common.dll
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\bin\Debug\net5.0\ref\E-CommerceOrderModule.Common.dll
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\bin\Debug\net5.0\E-CommerceOrderModule.Common.pdb
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.AssemblyInfoInputs.cache
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.AssemblyInfo.cs
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.csproj.CoreCompileInputs.cache
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.dll
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\ref\E-CommerceOrderModule.Common.dll
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.pdb
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.csproj.AssemblyReference.cache

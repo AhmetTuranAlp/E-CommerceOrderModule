@@ -1,0 +1,110 @@
+﻿@using E_CommerceOrderModule.Core.DTOs
+@using E_CommerceOrderModule.Web.Headers
+@using Microsoft.AspNetCore.Http
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/Header.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/js/Header.js"></script>
+</head>
+<body>
+    @{
+        List<BasketDTO> basketCollection = Context.Session.Get<List<BasketDTO>>("BasketCard");
+        decimal totalPrice = 0;
+        var count = 0;
+        if (basketCollection != null && basketCollection.Count > 0)
+        {
+            basketCollection.ForEach(x =>
+            {
+                totalPrice += Convert.ToDecimal(x.Price * x.Quantity);
+                count += x.Quantity;
+            });
+
+        }
+    }
+    <header>
+        <div class="row">
+            <div class="offset-1 col-md-9">
+                <nav class="navbar navbar-expand-sm ">
+                    <div class="container">
+                        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse pull-left">
+                            <ul class="navbar-nav flex-grow-1">
+                                <li class="">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="List"><strong>Ürün  Listesi</strong></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-md-2 pull-right" style="margin-top:2px;">
+                <div class="row">
+                    <div class="dropdown">
+                        <button id="basketButton" type="button" class="btn btn-info" data-toggle="dropdown">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Sepet <span class="badge badge-pill badge-danger">@count</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <div class="row total-header-section">
+                                <div class="col-lg-6 col-sm-6 col-6">
+                                </div>
+                                <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
+                                    <p>Toplam: <span class="text-info">@totalPrice TL</span></p>
+                                </div>
+                            </div>
+                            @if (basketCollection != null && basketCollection.Count > 0)
+                            {
+                                foreach (var item in basketCollection)
+                                {
+                                    <div class="row cart-detail">
+                                        <div class="col-lg-4 col-sm-4 col-4 cart-detail-img">
+                                            <img src="https://picsum.photos/200/300">
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6 col-6 cart-detail-product">
+                                            <p>@item.ProductName</p>
+                                            <span class="price text-info"> @item.Price TL</span> <br /><span class="count"> Adet : @item.Quantity</span>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-2 col-2 product-delete">
+                                            <a onclick="BasketDelete('@item.Id')" class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 col-12 text-center checkout">
+                                    <a href="/Basket/List" class="btn btn-primary btn-block">Alışverişi Tamamla</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - ShoppingMarket.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

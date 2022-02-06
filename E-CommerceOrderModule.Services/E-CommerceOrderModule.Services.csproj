@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>E_CommerceOrderModule.Services</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\E-CommerceOrderModule.Common\E-CommerceOrderModule.Common.csproj" />
+    <ProjectReference Include="..\E-CommerceOrderModule.Repository\E-CommerceOrderModule.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

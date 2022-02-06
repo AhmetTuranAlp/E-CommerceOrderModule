@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "E-CommerceOrderModule.Core/1.0.0": {
+        "dependencies": {
+          "E-CommerceOrderModule.Common": "1.0.0"
+        },
+        "runtime": {
+          "E-CommerceOrderModule.Core.dll": {}
+        }
+      },
+      "E-CommerceOrderModule.Common/1.0.0": {
+        "runtime": {
+          "E-CommerceOrderModule.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "E-CommerceOrderModule.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "E-CommerceOrderModule.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

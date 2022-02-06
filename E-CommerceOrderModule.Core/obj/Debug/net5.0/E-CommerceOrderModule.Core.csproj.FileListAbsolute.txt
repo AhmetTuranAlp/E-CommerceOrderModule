@@ -1,0 +1,15 @@
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\E-CommerceOrderModule.Core.deps.json
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\E-CommerceOrderModule.Core.dll
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\ref\E-CommerceOrderModule.Core.dll
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\E-CommerceOrderModule.Core.pdb
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.AssemblyInfoInputs.cache
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.AssemblyInfo.cs
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.csproj.CoreCompileInputs.cache
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.dll
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\ref\E-CommerceOrderModule.Core.dll
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.pdb
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.csproj.AssemblyReference.cache
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\E-CommerceOrderModule.Common.dll
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\E-CommerceOrderModule.Common.pdb
+C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.csproj.CopyComplete
