@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = E_CommerceOrderModule.Common
-build_property.ProjectDir = C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\
+build_property.ProjectDir = D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Common\

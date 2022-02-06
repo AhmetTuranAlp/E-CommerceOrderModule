@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ahmet Turan Alp\\source\\repos\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj",
+      "projectUniqueName": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj",
       "projectName": "E-CommerceOrderModule.Core",
-      "projectPath": "C:\\Users\\Ahmet Turan Alp\\source\\repos\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj",
+      "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj",
       "packagesPath": "C:\\Users\\Ahmet Turan Alp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ahmet Turan Alp\\source\\repos\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\obj\\",
+      "outputPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,8 +58,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Ahmet Turan Alp\\source\\repos\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj": {
-              "projectPath": "C:\\Users\\Ahmet Turan Alp\\source\\repos\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj"
+            "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj": {
+              "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj"
             }
           }
         }

@@ -13,3 +13,18 @@ C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModul
 C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\E-CommerceOrderModule.Common.dll
 C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\E-CommerceOrderModule.Common.pdb
 C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.csproj.CopyComplete
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\E-CommerceOrderModule.Core.deps.json
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\E-CommerceOrderModule.Core.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\ref\E-CommerceOrderModule.Core.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\E-CommerceOrderModule.Core.pdb
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\E-CommerceOrderModule.Common.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\bin\Debug\net5.0\E-CommerceOrderModule.Common.pdb
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.csproj.AssemblyReference.cache
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.AssemblyInfoInputs.cache
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.AssemblyInfo.cs
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.csproj.CoreCompileInputs.cache
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.csproj.CopyComplete
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\ref\E-CommerceOrderModule.Core.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Core\obj\Debug\net5.0\E-CommerceOrderModule.Core.pdb

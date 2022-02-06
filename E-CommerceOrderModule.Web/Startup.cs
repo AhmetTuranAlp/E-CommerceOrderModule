@@ -6,6 +6,7 @@ using E_CommerceOrderModule.Repository.Concrete.Repositories;
 using E_CommerceOrderModule.Repository.Context;
 using E_CommerceOrderModule.Services.Mapping;
 using E_CommerceOrderModule.Services.Services;
+using E_CommerceOrderModule.Web.RabbitMQ;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -14,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RabbitMQ.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +38,9 @@ namespace E_CommerceOrderModule.Web
             services.AddRazorPages();
             services.AddMvc();
             services.AddDbContext<ECommerceOrderModuleContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SqlConnection")));
+            services.AddSingleton(sp => new ConnectionFactory() { Uri = new Uri(Configuration.GetConnectionString("RabbitMQ")) });
+            services.AddSingleton<RabbitMQClientService>();
+            services.AddSingleton<RabbitMQPublisher>();
 
             services.AddTransient(typeof(IUnitOfWork), typeof(UnitOfWork));
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));

@@ -18,3 +18,23 @@ C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModul
 C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Repository\obj\Debug\net5.0\E-CommerceOrderModule.Repository.genruntimeconfig.cache
 C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Repository\bin\Debug\net5.0\E-CommerceOrderModule.Common.dll
 C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Repository\bin\Debug\net5.0\E-CommerceOrderModule.Common.pdb
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\bin\Debug\net5.0\E-CommerceOrderModule.Repository.deps.json
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\bin\Debug\net5.0\E-CommerceOrderModule.Repository.runtimeconfig.json
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\bin\Debug\net5.0\E-CommerceOrderModule.Repository.runtimeconfig.dev.json
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\bin\Debug\net5.0\E-CommerceOrderModule.Repository.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\bin\Debug\net5.0\ref\E-CommerceOrderModule.Repository.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\bin\Debug\net5.0\E-CommerceOrderModule.Repository.pdb
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\bin\Debug\net5.0\E-CommerceOrderModule.Common.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\bin\Debug\net5.0\E-CommerceOrderModule.Core.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\bin\Debug\net5.0\E-CommerceOrderModule.Core.pdb
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\bin\Debug\net5.0\E-CommerceOrderModule.Common.pdb
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\obj\Debug\net5.0\E-CommerceOrderModule.Repository.csproj.AssemblyReference.cache
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\obj\Debug\net5.0\E-CommerceOrderModule.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\obj\Debug\net5.0\E-CommerceOrderModule.Repository.AssemblyInfoInputs.cache
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\obj\Debug\net5.0\E-CommerceOrderModule.Repository.AssemblyInfo.cs
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\obj\Debug\net5.0\E-CommerceOrderModule.Repository.csproj.CoreCompileInputs.cache
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\obj\Debug\net5.0\E-CommerceOrderModule.Repository.csproj.CopyComplete
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\obj\Debug\net5.0\E-CommerceOrderModule.Repository.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\obj\Debug\net5.0\ref\E-CommerceOrderModule.Repository.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\obj\Debug\net5.0\E-CommerceOrderModule.Repository.pdb
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Repository\obj\Debug\net5.0\E-CommerceOrderModule.Repository.genruntimeconfig.cache

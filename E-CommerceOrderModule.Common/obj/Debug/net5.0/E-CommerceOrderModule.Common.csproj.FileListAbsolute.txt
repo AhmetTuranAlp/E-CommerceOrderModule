@@ -10,3 +10,15 @@ C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModul
 C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\ref\E-CommerceOrderModule.Common.dll
 C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.pdb
 C:\Users\Ahmet Turan Alp\source\repos\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.csproj.AssemblyReference.cache
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Common\bin\Debug\net5.0\E-CommerceOrderModule.Common.deps.json
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Common\bin\Debug\net5.0\E-CommerceOrderModule.Common.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Common\bin\Debug\net5.0\ref\E-CommerceOrderModule.Common.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Common\bin\Debug\net5.0\E-CommerceOrderModule.Common.pdb
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.csproj.AssemblyReference.cache
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.AssemblyInfoInputs.cache
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.AssemblyInfo.cs
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.csproj.CoreCompileInputs.cache
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\ref\E-CommerceOrderModule.Common.dll
+D:\GithupProjects\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.pdb
