@@ -83,7 +83,7 @@ namespace E_CommerceOrderModule.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Product}/{action=List}/{id?}");
+                    pattern: "{controller=Product}/{action=Index}/{id?}");
             });
         }
     }

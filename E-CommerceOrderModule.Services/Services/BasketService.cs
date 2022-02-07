@@ -34,7 +34,8 @@ namespace E_CommerceOrderModule.Services.Services
                 var baskets = await _basketRepository.GetAllAsync();
                 if (baskets.ToList().Count > 0)
                 {
-                    result.ResultObject = _mapper.Map<List<BasketDTO>>(baskets.ToList());
+                    var basketList = baskets.ToList().Where(x => x.Status != ModelEnums.Status.Deleted);
+                    result.ResultObject = _mapper.Map<List<BasketDTO>>(basketList.ToList());
                     result.SetTrue();
                 }
                 else

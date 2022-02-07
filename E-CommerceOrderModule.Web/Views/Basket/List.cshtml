@@ -35,7 +35,6 @@
                                 <th>Fiyat</th>
                                 <th>Adet</th>
                                 <th>Tarih</th>
-                                <th><em class="fa fa-cog"></em></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,10 +48,7 @@
                                         <td>@item.ProductName</td>
                                         <td>@item.Price TL</td>
                                         <td>@item.Quantity</td>
-                                        <td>@String.Format("{0:dd MM yyyy}", item.UpdateDate)</td>
-                                        <td align="center">
-                                            <a onclick="BasketDelete('@item.Id')" class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                                        </td>
+                                        <td>@String.Format("{0:dd MM yyyy}", item.UpdateDate)</td>                                       
                                     </tr>
                                     TotalPrice += @Convert.ToDecimal(Convert.ToInt32(item.Price * item.Quantity));
                                     TotalProduct += item.Quantity;

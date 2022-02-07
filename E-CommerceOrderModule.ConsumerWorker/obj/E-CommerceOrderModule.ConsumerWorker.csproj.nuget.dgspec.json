@@ -1,0 +1,375 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.ConsumerWorker\\E-CommerceOrderModule.ConsumerWorker.csproj": {}
+  },
+  "projects": {
+    "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj",
+        "projectName": "E-CommerceOrderModule.Common",
+        "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj",
+        "packagesPath": "C:\\Users\\Ahmet Turan Alp\\.nuget\\packages\\",
+        "outputPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ahmet Turan Alp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.ConsumerWorker\\E-CommerceOrderModule.ConsumerWorker.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.ConsumerWorker\\E-CommerceOrderModule.ConsumerWorker.csproj",
+        "projectName": "E-CommerceOrderModule.ConsumerWorker",
+        "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.ConsumerWorker\\E-CommerceOrderModule.ConsumerWorker.csproj",
+        "packagesPath": "C:\\Users\\Ahmet Turan Alp\\.nuget\\packages\\",
+        "outputPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.ConsumerWorker\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ahmet Turan Alp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj": {
+                "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj"
+              },
+              "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Repository\\E-CommerceOrderModule.Repository.csproj": {
+                "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Repository\\E-CommerceOrderModule.Repository.csproj"
+              },
+              "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Services\\E-CommerceOrderModule.Services.csproj": {
+                "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Services\\E-CommerceOrderModule.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.2.2, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
+            "Serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Serilog.Exceptions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Serilog.Sinks.Debug": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "Serilog.Sinks.Elasticsearch": {
+              "target": "Package",
+              "version": "[8.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj",
+        "projectName": "E-CommerceOrderModule.Core",
+        "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj",
+        "packagesPath": "C:\\Users\\Ahmet Turan Alp\\.nuget\\packages\\",
+        "outputPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ahmet Turan Alp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj": {
+                "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Repository\\E-CommerceOrderModule.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Repository\\E-CommerceOrderModule.Repository.csproj",
+        "projectName": "E-CommerceOrderModule.Repository",
+        "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Repository\\E-CommerceOrderModule.Repository.csproj",
+        "packagesPath": "C:\\Users\\Ahmet Turan Alp\\.nuget\\packages\\",
+        "outputPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ahmet Turan Alp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj": {
+                "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Services\\E-CommerceOrderModule.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Services\\E-CommerceOrderModule.Services.csproj",
+        "projectName": "E-CommerceOrderModule.Services",
+        "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Services\\E-CommerceOrderModule.Services.csproj",
+        "packagesPath": "C:\\Users\\Ahmet Turan Alp\\.nuget\\packages\\",
+        "outputPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ahmet Turan Alp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj": {
+                "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj"
+              },
+              "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Repository\\E-CommerceOrderModule.Repository.csproj": {
+                "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Repository\\E-CommerceOrderModule.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

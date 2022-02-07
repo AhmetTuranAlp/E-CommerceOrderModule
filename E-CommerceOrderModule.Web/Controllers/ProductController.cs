@@ -27,13 +27,13 @@ namespace E_CommerceOrderModule.Web.Controllers
             _userService = userService;
         }
 
-        public async Task<IActionResult> List()
+        public async Task<IActionResult> Index()
         {
-            var result =await _userService.GetUserAsync();
+            var result = await _userService.GetUserAsync();
             if (result.ResultStatus)
             {
                 #region Session
-               HttpContext.Session.SetString("UserId", result.ResultObject.Id.ToString());              
+                HttpContext.Session.SetString("UserId", result.ResultObject.Id.ToString());
                 var basketAll = await _basketService.GetAllBasketAsync();
                 if (basketAll.ResultStatus)
                 {
@@ -41,14 +41,20 @@ namespace E_CommerceOrderModule.Web.Controllers
                     if (basketsSession.Count > 0)
                         HttpContext.Session.Set<List<BasketDTO>>("BasketCard", basketsSession);
                     else
-                        HttpContext.Session.Set<List<BasketDTO>>("BasketCard", new List<BasketDTO>()); 
+                        HttpContext.Session.Set<List<BasketDTO>>("BasketCard", new List<BasketDTO>());
                 }
                 else
                     HttpContext.Session.Set<List<BasketDTO>>("BasketCard", new List<BasketDTO>());
 
                 #endregion
             }
+            return RedirectToAction("List");
+        }
 
+
+
+        public async Task<IActionResult> List()
+        {
             var products = await _productService.GetAllProductAsync();
             return View(products.ResultObject);
         }

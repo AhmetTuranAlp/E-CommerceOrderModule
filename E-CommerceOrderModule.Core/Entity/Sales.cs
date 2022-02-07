@@ -13,8 +13,10 @@ namespace E_CommerceOrderModule.Core.Entity
         public Sales()
         {
             TotalPrice = 0;
-
+            IsLog = false;
         }
+
+        public string OrderNumber { get; set; }
 
         private decimal _totalPrice;
         [Required(ErrorMessage = "Zorunlu Alan")]
@@ -31,6 +33,8 @@ namespace E_CommerceOrderModule.Core.Entity
         public string UserCode { get; set; }
 
         public int TotalQuantity { get; set; }
+
+        public bool IsLog { get; set; }
 
     }
 }

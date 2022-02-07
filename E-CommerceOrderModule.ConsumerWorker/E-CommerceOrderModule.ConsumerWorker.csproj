@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>dotnet-E_CommerceOrderModule.ConsumerWorker-27AA8464-EFBF-4A20-AF7F-D1BAD1CEEEAB</UserSecretsId>
+    <RootNamespace>E_CommerceOrderModule.ConsumerWorker</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.2" />
+    <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+    <PackageReference Include="Serilog.Enrichers.Environment" Version="2.2.0" />
+    <PackageReference Include="Serilog.Exceptions" Version="8.0.0" />
+    <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+    <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="8.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\E-CommerceOrderModule.Core\E-CommerceOrderModule.Core.csproj" />
+    <ProjectReference Include="..\E-CommerceOrderModule.Repository\E-CommerceOrderModule.Repository.csproj" />
+    <ProjectReference Include="..\E-CommerceOrderModule.Services\E-CommerceOrderModule.Services.csproj" />
+  </ItemGroup>
+</Project>

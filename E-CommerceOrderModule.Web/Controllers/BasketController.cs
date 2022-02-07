@@ -42,87 +42,9 @@ namespace E_CommerceOrderModule.Web.Controllers
                 var userId = this.HttpContext.Session.GetString("UserId");
                 var user = await _userService.GetUserAsync();
                 _rabbitMQPublisher.Publish(user.ResultObject);
-
-                #region Sepet Session'ı Güncelleniyor.
-
-                //var basketAll = await _basketService.GetAllBasketAsync();
-                //List<BasketDTO> basketsSession = basketAll.ResultObject.Where(x => x.Status == ModelEnumsDTO.Status.Active && x.UserCode == userId).ToList();
                 HttpContext.Session.Set<List<BasketDTO>>("BasketCard", new List<BasketDTO>());
+
                 return Json(true);
-                #endregion
-
-
-                //var userId = this.HttpContext.Session.GetString("UserId");
-                //var basketList = await _basketService.GetAllBasketAsync();
-                //if (basketList.ResultStatus && basketList.ResultObject.Count > 0)
-                //{
-                //    var baskets = basketList.ResultObject.Where(x => x.UserCode == userId).ToList();
-
-                //    #region Ödeme Modeline Bilgiler Set Ediliyor.
-                //    SalesDTO sales = new SalesDTO()
-                //    {
-                //        Status = ModelEnumsDTO.Status.Active,
-                //        UploadDate = DateTime.Now,
-                //        UpdateDate = DateTime.Now,
-
-                //    };
-                //    #endregion
-
-                //    var productList = await _productService.GetAllProductAsync();
-
-                //    foreach (var x in baskets)
-                //    {
-                //        #region Ürün Stok Bilgisi Güncelleniyor.
-                //        if (productList.ResultStatus && productList.ResultObject.Count > 0)
-                //        {
-                //            var product = productList.ResultObject.Where(c => c.ProductId == x.ProductCode).FirstOrDefault();
-                //            if (product != null)
-                //            {
-                //                product.Stock -= x.Quantity;
-                //                var res = await _productService.UpdateProduct(product);
-                //            }
-                //        }
-                //        #endregion
-
-                //        #region Sepetdeki Ürün Satış İşleminden Dolayı Statusu Silindiye Çekiliyor.
-                //        x.Status = ModelEnumsDTO.Status.Deleted;
-                //        await _basketService.UpdateBasket(x);
-                //        #endregion
-
-                //        #region Ödeme Modeline Bilgiler Set Ediliyor.                 
-                //        sales.TotalPrice += x.Price * x.Quantity;
-                //        sales.PaymentType = "Kredi Kartı (Tek Çekim)";
-                //        sales.TotalQuantity += x.Quantity;
-                //        sales.UserCode = userId;
-
-                //        var userDto =await _userService.GetUserAsync();
-                //        if (userDto.ResultStatus)
-                //        {
-                //            sales.UserName = userDto.ResultObject.UserName;
-                //        }
-
-                //        #endregion
-                //    }
-
-                //    var result =await _saleService.CreateSales(sales);
-                //    if (result.ResultStatus)
-                //    {
-                //        #region Sepet Session'ı Güncelleniyor.
-
-                //        var basketAll = await _basketService.GetAllBasketAsync();
-                //        List<BasketDTO> basketsSession = basketAll.ResultObject.Where(x => x.Status ==ModelEnumsDTO.Status.Active && x.UserCode == this.HttpContext.Session.GetString("UserId")).ToList();
-                //        HttpContext.Session.Set<List<BasketDTO>>("BasketCard", basketsSession);
-                //        return Json(true);
-                //        #endregion
-                //    }
-                //    else
-                //    {
-                //        return Json(false);
-                //    }
-                //}
-                //else
-                //    return Json(false);
-
 
             }
             catch (Exception)
