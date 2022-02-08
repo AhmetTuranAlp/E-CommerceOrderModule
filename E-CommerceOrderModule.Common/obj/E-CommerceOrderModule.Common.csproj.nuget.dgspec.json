@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj": {}
+    "C:\\GithubProject\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj": {}
   },
   "projects": {
-    "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj": {
+    "C:\\GithubProject\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj",
+        "projectUniqueName": "C:\\GithubProject\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj",
         "projectName": "E-CommerceOrderModule.Common",
-        "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj",
+        "projectPath": "C:\\GithubProject\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj",
         "packagesPath": "C:\\Users\\Ahmet Turan Alp\\.nuget\\packages\\",
-        "outputPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\obj\\",
+        "outputPath": "C:\\GithubProject\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

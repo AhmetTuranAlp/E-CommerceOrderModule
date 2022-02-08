@@ -48,7 +48,7 @@
                                         <td>@item.ProductName</td>
                                         <td>@item.Price TL</td>
                                         <td>@item.Quantity</td>
-                                        <td>@String.Format("{0:dd MM yyyy}", item.UpdateDate)</td>                                       
+                                        <td>@String.Format("{0:dd MM yyyy}", item.UpdateDate)</td>
                                     </tr>
                                     TotalPrice += @Convert.ToDecimal(Convert.ToInt32(item.Price * item.Quantity));
                                     TotalProduct += item.Quantity;

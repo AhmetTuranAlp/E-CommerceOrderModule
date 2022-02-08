@@ -16,6 +16,6 @@ namespace E_CommerceOrderModule.Common
 
         public static string _rabbitMQUrl = "amqps://yejsxnnm:EY3xmVdyqv7WO21odHx83BzvJQ0wJF2X@jaguar.rmq.cloudamqp.com/yejsxnnm";
 
-        public static string _sqlServerConnectionString = "Data Source=DESKTOP-52NKD5G;Initial Catalog=ECOrderModuleDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        public static string _sqlServerConnectionString = "Data Source=LAPTOP-HU6ADIPN;Initial Catalog=ECOrderModuleDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
     }
 }

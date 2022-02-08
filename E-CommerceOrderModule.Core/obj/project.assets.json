@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj",
+      "projectUniqueName": "C:\\GithubProject\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj",
       "projectName": "E-CommerceOrderModule.Core",
-      "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj",
+      "projectPath": "C:\\GithubProject\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\E-CommerceOrderModule.Core.csproj",
       "packagesPath": "C:\\Users\\Ahmet Turan Alp\\.nuget\\packages\\",
-      "outputPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\obj\\",
+      "outputPath": "C:\\GithubProject\\E-CommerceOrderModule\\E-CommerceOrderModule.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -58,8 +58,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj": {
-              "projectPath": "D:\\GithupProjects\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj"
+            "C:\\GithubProject\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj": {
+              "projectPath": "C:\\GithubProject\\E-CommerceOrderModule\\E-CommerceOrderModule.Common\\E-CommerceOrderModule.Common.csproj"
             }
           }
         }
@@ -88,7 +88,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

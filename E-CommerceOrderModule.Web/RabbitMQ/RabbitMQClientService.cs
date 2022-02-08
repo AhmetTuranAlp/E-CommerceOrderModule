@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace E_CommerceOrderModule.Web.RabbitMQ
 {
-    public class RabbitMQClientService :IDisposable
+    public class RabbitMQClientService : IDisposable
     {
         private readonly ConnectionFactory _connectionFactory;
         private IConnection _connection;
