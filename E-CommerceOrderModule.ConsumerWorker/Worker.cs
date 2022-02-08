@@ -43,6 +43,7 @@ namespace E_CommerceOrderModule.ConsumerWorker
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             var consumer = new EventingBasicConsumer(_channel);
+            _channel.QueueDeclare(RabbitMQClientService.QueueName, true, false, false, null);
             _channel.BasicConsume(RabbitMQClientService.QueueName, false, consumer);
             consumer.Received += (model, e) =>
             {
@@ -127,67 +128,6 @@ namespace E_CommerceOrderModule.ConsumerWorker
 
                     }
                 }
-
-
-
-                //using (var scope = _serviceProvider.CreateScope())
-                //{
-                //    var context = scope.ServiceProvider.GetRequiredService<ECommerceOrderModuleContext>();
-
-                //    var basketList = context.Baskets.ToList();
-                //    if (basketList.Count > 0)
-                //    {
-                //        var baskets = basketList.Where(x => x.UserCode == user.Id.ToString()).ToList();
-
-                //        #region Ödeme Modeline Bilgiler Set Ediliyor.
-                //        Sales sales = new Sales()
-                //        {
-                //            Status = ModelEnums.Status.Active,
-                //            UploadDate = DateTime.Now,
-                //            UpdateDate = DateTime.Now,
-
-                //        };
-                //        #endregion
-
-                //        //var productList = context.Products.ToList();
-
-                //        foreach (var x in baskets)
-                //        {
-                //            #region Ürün Stok Bilgisi Güncelleniyor.
-                //            var product = context.Products.Where(c => c.ProductId == x.ProductCode).FirstOrDefault();
-                //            if (product != null)
-                //            {
-                //                product.Stock -= x.Quantity;
-                //                context.Products.Update(product);
-                //            }
-                //            #endregion
-
-                //            #region Sepetdeki Ürün Satış İşleminden Dolayı Statusu Silindiye Çekiliyor.
-                //            x.Status = ModelEnums.Status.Deleted;
-                //            context.Baskets.Update(x);
-                //            #endregion
-
-                //            #region Ödeme Modeline Bilgiler Set Ediliyor.                 
-                //            sales.TotalPrice += x.Price * x.Quantity;
-                //            sales.PaymentType = "Kredi Kartı (Tek Çekim)";
-                //            sales.TotalQuantity += x.Quantity;
-                //            sales.UserCode = user.Id.ToString();
-                //            sales.UserName = user.UserName;
-                //            #endregion
-                //        }
-
-                //        context.Sales.Add(sales);
-                //        var status = context.SaveChanges();
-                //        if (status > 0)
-                //        {
-                //            string log = $"Sipariş Bilgileri: Sipariş Numarası: {sales.OrderNumber} Toplam Fiyat: {sales.TotalPrice} Toplam Adet: {sales.TotalQuantity}";
-                //            _logger.LogInformation(log);
-                //            Console.Clear();
-                //            Console.WriteLine(log);
-                //            _channel.BasicAck(@event.DeliveryTag, false);
-                //        }
-                //    }
-                //}
 
             }
         
