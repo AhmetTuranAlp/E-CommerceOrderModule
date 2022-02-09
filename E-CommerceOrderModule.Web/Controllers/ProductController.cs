@@ -83,18 +83,18 @@ namespace E_CommerceOrderModule.Web.Controllers
                                 if (basketAll.ResultStatus)
                                 {
                                     HttpContext.Session.Set<List<BasketDTO>>("BasketCard", basketAll.ResultObject.ToList());
-                                    return Json(true);
+                                    return Json(basketProduct.ResultObject);
                                 }
                                 else
-                                    return Json(false);
+                                    return Json(null);
                                 #endregion
 
                             }
                             else
-                                return Json(false);
+                                return Json(null);
                         }
                         else
-                            return Json(false);
+                            return Json(null);
                     }
                     else
                     {
@@ -118,7 +118,8 @@ namespace E_CommerceOrderModule.Web.Controllers
                                 UpdateDate = DateTime.Now,
                                 UploadDate = DateTime.Now,
                                 UserCode = userId,
-                                ProductCode = product.ResultObject.ProductId
+                                ProductCode = product.ResultObject.ProductId,
+                                Image = product.ResultObject.Image
                             };
                             var result = await _basketService.CreateBasket(basketDTO);
                             if (result.ResultStatus)
@@ -128,7 +129,7 @@ namespace E_CommerceOrderModule.Web.Controllers
                                 if (basketAll.ResultStatus)
                                 {
                                     HttpContext.Session.Set<List<BasketDTO>>("BasketCard", basketAll.ResultObject.ToList());
-                                    return Json(true);
+                                    return Json(basketDTO);
                                 }
                                 else
                                     return Json(false);
@@ -143,11 +144,11 @@ namespace E_CommerceOrderModule.Web.Controllers
                     }
                 }
                 else
-                    return Json(false);
+                    return Json(null);
             }
             catch (Exception)
             {
-                return Json(false);
+                return Json(null);
             }
         }
     }

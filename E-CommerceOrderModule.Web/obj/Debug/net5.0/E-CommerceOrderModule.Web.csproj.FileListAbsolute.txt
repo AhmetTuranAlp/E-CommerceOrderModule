@@ -142,7 +142,6 @@ C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Web\bin\Debug\net5.
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Web\bin\Debug\net5.0\E-CommerceOrderModule.Services.pdb
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Web\bin\Debug\net5.0\E-CommerceOrderModule.Common.pdb
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Web\bin\Debug\net5.0\E-CommerceOrderModule.Core.pdb
-C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Web\obj\Debug\net5.0\Razor\Views\Basket\List.cshtml.g.cs
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Web\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Web\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Web\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -154,3 +153,4 @@ C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Web\obj\Debug\net5.
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Web\obj\Debug\net5.0\E-CommerceOrderModule.Web.csproj.CopyComplete
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Web\obj\Debug\net5.0\E-CommerceOrderModule.Web.genruntimeconfig.cache
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Web\obj\Debug\net5.0\Razor\Views\Product\List.cshtml.g.cs
+C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Web\obj\Debug\net5.0\Razor\Views\Basket\List.cshtml.g.cs

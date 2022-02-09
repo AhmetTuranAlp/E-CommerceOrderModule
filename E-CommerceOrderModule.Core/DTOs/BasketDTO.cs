@@ -18,7 +18,7 @@ namespace E_CommerceOrderModule.Core.DTOs
             set { _price = Math.Round(value, 2); }
         }
         public int Quantity { get; set; }
-
+        public string Image { get; set; }
         public string ProductCode { get; set; }
 
         public string ProductName { get; set; }

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace E_CommerceOrderModule.Repository.Migrations
 {
     [DbContext(typeof(ECommerceOrderModuleContext))]
-    [Migration("20220209141150_ECOrderModuleDatabase")]
-    partial class ECOrderModuleDatabase
+    [Migration("20220209211332_ECOrderModule")]
+    partial class ECOrderModule
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,6 +29,9 @@ namespace E_CommerceOrderModule.Repository.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("BasketId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
@@ -123,59 +126,78 @@ namespace E_CommerceOrderModule.Repository.Migrations
                         new
                         {
                             Id = 1,
-                            BrandName = "B1",
-                            CategoryName = "C1",
+                            BrandName = "Apple",
+                            CategoryName = "Cep Telefonu",
                             CurrencyType = 0,
-                            Description = "P1",
-                            Image = "",
+                            Description = "P100AIPRO Iphone 11 PRO",
+                            Image = "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp",
                             KDV = 1m,
                             MarketPrice = 100m,
-                            Name = "P1",
-                            ProductId = "P100",
+                            Name = "Iphone 11 PRO",
+                            ProductId = "P100AIPRO",
                             SalePrice = 100m,
-                            ShortDescription = "P1",
+                            ShortDescription = "P100AIPRO Apple Iphone 11 PRO",
                             Status = 3,
                             Stock = 100,
-                            UpdateDate = new DateTime(2022, 2, 9, 17, 11, 50, 495, DateTimeKind.Local).AddTicks(2296),
-                            UploadDate = new DateTime(2022, 2, 9, 17, 11, 50, 496, DateTimeKind.Local).AddTicks(3489)
+                            UpdateDate = new DateTime(2022, 2, 10, 0, 13, 31, 861, DateTimeKind.Local).AddTicks(2810),
+                            UploadDate = new DateTime(2022, 2, 10, 0, 13, 31, 862, DateTimeKind.Local).AddTicks(2884)
                         },
                         new
                         {
                             Id = 2,
-                            BrandName = "B2",
-                            CategoryName = "C2",
+                            BrandName = "Samsung",
+                            CategoryName = "Cep Telefonu",
                             CurrencyType = 0,
-                            Description = "P2",
-                            Image = "",
+                            Description = "P200SGN10 Samsung Galaxy Note 10",
+                            Image = "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img2.webp",
                             KDV = 1m,
                             MarketPrice = 200m,
-                            Name = "P2",
-                            ProductId = "P200",
+                            Name = "Samsung Galaxy Note 10",
+                            ProductId = "P200SGN10",
                             SalePrice = 200m,
-                            ShortDescription = "P2",
+                            ShortDescription = "P200SGN10 Samsung Galaxy Note 10",
                             Status = 3,
                             Stock = 100,
-                            UpdateDate = new DateTime(2022, 2, 9, 17, 11, 50, 497, DateTimeKind.Local).AddTicks(2085),
-                            UploadDate = new DateTime(2022, 2, 9, 17, 11, 50, 497, DateTimeKind.Local).AddTicks(2101)
+                            UpdateDate = new DateTime(2022, 2, 10, 0, 13, 31, 863, DateTimeKind.Local).AddTicks(521),
+                            UploadDate = new DateTime(2022, 2, 10, 0, 13, 31, 863, DateTimeKind.Local).AddTicks(535)
                         },
                         new
                         {
                             Id = 3,
-                            BrandName = "B3",
-                            CategoryName = "C3",
+                            BrandName = "Canon",
+                            CategoryName = "Kamera",
                             CurrencyType = 0,
-                            Description = "P3",
-                            Image = "",
+                            Description = "P300CEM Canon EOS M50",
+                            Image = "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img3.webp",
                             KDV = 1m,
                             MarketPrice = 300m,
-                            Name = "P3",
-                            ProductId = "P300",
+                            Name = "Canon EOS M50",
+                            ProductId = "P300CEM",
                             SalePrice = 300m,
-                            ShortDescription = "P3",
+                            ShortDescription = "P300CEM Canon EOS M50",
                             Status = 3,
                             Stock = 100,
-                            UpdateDate = new DateTime(2022, 2, 9, 17, 11, 50, 497, DateTimeKind.Local).AddTicks(2169),
-                            UploadDate = new DateTime(2022, 2, 9, 17, 11, 50, 497, DateTimeKind.Local).AddTicks(2173)
+                            UpdateDate = new DateTime(2022, 2, 10, 0, 13, 31, 863, DateTimeKind.Local).AddTicks(579),
+                            UploadDate = new DateTime(2022, 2, 10, 0, 13, 31, 863, DateTimeKind.Local).AddTicks(584)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BrandName = "Apple",
+                            CategoryName = "Bilgisayar",
+                            CurrencyType = 0,
+                            Description = "P300MBPRO MacBook Pro",
+                            Image = "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp",
+                            KDV = 1m,
+                            MarketPrice = 400m,
+                            Name = "MacBook Pro",
+                            ProductId = "P300MBPRO",
+                            SalePrice = 400m,
+                            ShortDescription = "P300MBPRO MacBook Pro",
+                            Status = 3,
+                            Stock = 100,
+                            UpdateDate = new DateTime(2022, 2, 10, 0, 13, 31, 863, DateTimeKind.Local).AddTicks(586),
+                            UploadDate = new DateTime(2022, 2, 10, 0, 13, 31, 863, DateTimeKind.Local).AddTicks(589)
                         });
                 });
 

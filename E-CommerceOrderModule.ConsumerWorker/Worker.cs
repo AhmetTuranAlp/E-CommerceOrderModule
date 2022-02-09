@@ -44,7 +44,7 @@ namespace E_CommerceOrderModule.ConsumerWorker
         {
             var consumer = new EventingBasicConsumer(_channel);
             _channel.QueueDeclare(RabbitMQClientService.QueueName, true, false, false, null);
-            _channel.BasicConsume(RabbitMQClientService.QueueName, false, consumer);            
+            _channel.BasicConsume(RabbitMQClientService.QueueName, false, consumer);
             consumer.Received += (model, e) =>
             {
                 GetReciver(e);
@@ -90,19 +90,23 @@ namespace E_CommerceOrderModule.ConsumerWorker
                             if (product != null)
                             {
                                 product.Stock -= x.Quantity;
-                                var res = _productService.UpdateProduct(product).Result;                               
+                                var res = _productService.UpdateProduct(product).Result;
                             }
-                           
+
                         }
                         #endregion
 
-                        #region Sepetdeki Ürün Satış İşleminden Dolayı Statusu Silindiye Çekiliyor.
+                        #region Sepetdeki Ürün Satış İşleminden Dolayı Statusu Satış Bitti Çekiliyor.
                         x.Status = ModelEnumsDTO.Status.SaleFinish;
                         _basketService.UpdateBasket(x);
                         #endregion
 
                         #region Ödeme Modeline Bilgiler Set Ediliyor.                 
                         sales.TotalPrice += x.Price * x.Quantity;
+
+                        if (sales.TotalPrice > 500)
+                            sales.TotalPrice += Convert.ToDecimal(14.99);
+
                         sales.PaymentType = "Kredi Kartı (Tek Çekim)";
                         sales.TotalQuantity += x.Quantity;
                         sales.UserCode = basketRequest.UserCode;
