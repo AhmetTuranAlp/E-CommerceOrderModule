@@ -28,10 +28,11 @@ namespace E_CommerceOrderModule.Web.Controllers
         }
         public async Task<IActionResult> List()
         {
-            var userId = this.HttpContext.Session.GetString("UserId");
-            var result = await _basketService.GetAllBasketAsync();
-            var basketDTO = result.ResultObject.Where(x => x.UserCode == userId).ToList();
-            return View(basketDTO);
+            List<BasketDTO> basketList = new List<BasketDTO>();
+            var result = await _basketService.GetAllInBasketAsync(this.HttpContext.Session.GetString("UserId"));
+            if (result.ResultStatus && result.ResultObject.Count > 0)
+                basketList = result.ResultObject;
+            return View(basketList);
         }
 
         [HttpPost]
@@ -41,10 +42,34 @@ namespace E_CommerceOrderModule.Web.Controllers
             {
                 var userId = this.HttpContext.Session.GetString("UserId");
                 var user = await _userService.GetUserAsync();
-                _rabbitMQPublisher.Publish(user.ResultObject);
-                HttpContext.Session.Set<List<BasketDTO>>("BasketCard", new List<BasketDTO>());
+                if (user.ResultStatus)
+                {
+                    var basketAll = await _basketService.GetAllInBasketAsync(userId);
+                    if (basketAll.ResultStatus && basketAll.ResultObject.Count > 0)
+                    {
+                        foreach (var basketItem in basketAll.ResultObject)
+                        {
+                            basketItem.Status = ModelEnumsDTO.Status.Sale;
+                            await _basketService.UpdateBasket(basketItem);
+                        }
 
-                return Json(true);
+                        var result = basketAll.ResultObject.FirstOrDefault();
+                        BasketRequestDTO basketRequestDTO = new BasketRequestDTO()
+                        {
+                            BasketId = result.BasketId,
+                            UserCode = result.UserCode
+                        };
+                        _rabbitMQPublisher.Publish(basketRequestDTO);
+                        HttpContext.Session.Set<List<BasketDTO>>("BasketCard", new List<BasketDTO>());
+
+                        return Json(true);
+                    }
+                    else
+                        return Json(false);
+
+                }
+                else
+                    return Json(false);
 
             }
             catch (Exception)

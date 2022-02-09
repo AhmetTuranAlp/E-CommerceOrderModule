@@ -29,7 +29,7 @@ namespace E_CommerceOrderModule.Services.Services
         public async Task<Result<List<ProductDTO>>> GetAllProductAsync()
         {
             Result<List<ProductDTO>> result = new Result<List<ProductDTO>>();
-            var products = await _productRepository.GetAllAsync();
+            var products = await _productRepository.GetAllAsync(x => x.Status == ModelEnums.Status.NewRecord);
             if (products.ToList().Count > 0)
             {
                 result.ResultObject = _mapper.Map<List<ProductDTO>>(products.ToList());
@@ -41,10 +41,10 @@ namespace E_CommerceOrderModule.Services.Services
             return result;
         }
 
-        public async Task<Result<ProductDTO>> GetProductAsync(int id)
+        public async Task<Result<ProductDTO>> GetProductAsync(string productId)
         {
             Result<ProductDTO> result = new Result<ProductDTO>();
-            var products = await _productRepository.GetByIdAsync(id);
+            var products = await _productRepository.GetAsync(x => x.Status == ModelEnums.Status.NewRecord && x.ProductId == productId);
             if (products != null)
             {
                 result.ResultObject = _mapper.Map<ProductDTO>(products);

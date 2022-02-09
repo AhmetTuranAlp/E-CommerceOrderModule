@@ -18,11 +18,11 @@ namespace E_CommerceOrderModule.Web.RabbitMQ
             _rabbitMQClientService = rabbitMQClientService;
         }
 
-        public void Publish(UserDTO user)
+        public void Publish(BasketRequestDTO ParamObjectBasket)
         {
             var channel = _rabbitMQClientService.Connect();
 
-            var bodyString = JsonSerializer.Serialize(user);
+            var bodyString = JsonSerializer.Serialize(ParamObjectBasket);
 
             var bodyByte = Encoding.UTF8.GetBytes(bodyString);
 

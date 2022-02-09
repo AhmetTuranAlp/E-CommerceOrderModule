@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using E_CommerceOrderModule.Common;
 using E_CommerceOrderModule.Core.Asbtract;
 using E_CommerceOrderModule.Core.Asbtract.Services;
 using E_CommerceOrderModule.Core.DTOs;
@@ -34,10 +35,10 @@ namespace E_CommerceOrderModule.Web.Controllers
             {
                 #region Session
                 HttpContext.Session.SetString("UserId", result.ResultObject.Id.ToString());
-                var basketAll = await _basketService.GetAllBasketAsync();
-                if (basketAll.ResultStatus)
+                var basketAll = await _basketService.GetAllInBasketAsync(result.ResultObject.Id.ToString());
+                if (basketAll.ResultStatus && basketAll.ResultObject.Count > 0)
                 {
-                    List<BasketDTO> basketsSession = basketAll.ResultObject.Where(x => x.Status == Status.Active && x.UserCode == result.ResultObject.Id.ToString()).ToList();
+                    List<BasketDTO> basketsSession = basketAll.ResultObject.ToList();
                     if (basketsSession.Count > 0)
                         HttpContext.Session.Set<List<BasketDTO>>("BasketCard", basketsSession);
                     else
@@ -59,14 +60,14 @@ namespace E_CommerceOrderModule.Web.Controllers
             return View(products.ResultObject);
         }
 
-        public async Task<IActionResult> BasketAdd(int id)
+        public async Task<IActionResult> BasketAdd(string id)
         {
             try
             {
                 var product = await _productService.GetProductAsync(id); // Ürün Çekiliyor.
                 if (product.ResultObject != null && product.ResultStatus)
                 {
-                    var basketProduct = await _basketService.GetBasket(Convert.ToInt32(this.HttpContext.Session.GetString("UserId")), product.ResultObject.ProductId); //İlgili Ürün Sepet de Olup Olmadıgına Bakılıyor.
+                    var basketProduct = await _basketService.GetBasketProduct(this.HttpContext.Session.GetString("UserId"), product.ResultObject.ProductId); //İlgili Ürün Sepet de Olup Olmadıgına Bakılıyor.
                     if (basketProduct.ResultStatus)
                     {
                         //Ürün Sepet de Varsa
@@ -77,31 +78,40 @@ namespace E_CommerceOrderModule.Web.Controllers
                             if (result.ResultStatus)
                             {
                                 #region Sepet Session'ı Güncelleniyor.
-                                var basketAll = await _basketService.GetAllBasketAsync();
-                                List<BasketDTO> basketsSession = basketAll.ResultObject.Where(x => x.Status == Status.Active && x.UserCode == this.HttpContext.Session.GetString("UserId")).ToList();
-                                HttpContext.Session.Set<List<BasketDTO>>("BasketCard", basketsSession);
+                                var basketAll = await _basketService.GetAllInBasketAsync(this.HttpContext.Session.GetString("UserId"));
+                                if (basketAll.ResultStatus)
+                                {
+                                    HttpContext.Session.Set<List<BasketDTO>>("BasketCard", basketAll.ResultObject.ToList());
+                                    return Json(true);
+                                }
+                                else
+                                    return Json(false);
                                 #endregion
-                                return Json(true);
+
                             }
                             else
-                            {
                                 return Json(false);
-                            }
                         }
                         else
-                        {
                             return Json(false);
-                        }
                     }
                     else
                     {
+                        string basketId = string.Empty;
+                        var basketAll = await _basketService.GetAllInBasketAsync(this.HttpContext.Session.GetString("UserId"));
+                        if (basketAll.ResultStatus && basketAll.ResultObject.Count > 0)
+                            basketId = basketAll.ResultObject.FirstOrDefault().BasketId;
+                        else
+                            basketId = Operations.UniqueRandom(1, 9, 10);
+
                         //Ürün Sepet de Yoksa
                         if (product.ResultObject.Stock > 0)
                         {
                             BasketDTO basketDTO = new BasketDTO()
                             {
+                                BasketId = basketId,
                                 Price = product.ResultObject.SalePrice,
-                                Status = Status.Active,
+                                Status = Status.InBasket,
                                 ProductName = product.ResultObject.Name,
                                 Quantity = 1,
                                 UpdateDate = DateTime.Now,
@@ -113,28 +123,26 @@ namespace E_CommerceOrderModule.Web.Controllers
                             if (result.ResultStatus)
                             {
                                 #region Sepet Session'ı Güncelleniyor.
-                                var basketAll = await _basketService.GetAllBasketAsync();
-                                List<BasketDTO> basketsSession = basketAll.ResultObject.Where(x => x.Status == Status.Active && x.UserCode == this.HttpContext.Session.GetString("UserId")).ToList();
-                                HttpContext.Session.Set<List<BasketDTO>>("BasketCard", basketsSession);
+                                 basketAll = await _basketService.GetAllInBasketAsync(this.HttpContext.Session.GetString("UserId"));
+                                if (basketAll.ResultStatus)
+                                {
+                                    HttpContext.Session.Set<List<BasketDTO>>("BasketCard", basketAll.ResultObject.ToList());
+                                    return Json(true);
+                                }
+                                else
+                                    return Json(false);
                                 #endregion
-                                return Json(true);
                             }
                             else
-                            {
                                 return Json(false);
-                            }
                         }
                         else
-                        {
                             return Json(false);
-                        }
 
                     }
                 }
                 else
-                {
                     return Json(false);
-                }
             }
             catch (Exception)
             {

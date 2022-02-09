@@ -9,6 +9,8 @@ namespace E_CommerceOrderModule.Core.Entity
 {
     public class Basket : BaseEntity
     {
+        public string BasketId { get; set; }
+
         private decimal _price;
         public decimal Price
         {

@@ -18,7 +18,11 @@ namespace E_CommerceOrderModule.Core.Entity
             [Description("Pasif")]
             Passive = 2,
             [Description("Yeni Kayıt")]
-            NewRecord = 3
+            NewRecord = 3,
+            [Description("Sepet")]
+            InBasket = 4,
+            [Description("Satis")]
+            Sale = 5
         }
 
         public enum PaymentType : int

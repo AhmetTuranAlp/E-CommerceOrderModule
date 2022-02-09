@@ -31,15 +31,6 @@ namespace E_CommerceOrderModule.Services.Services
             return entity;
         }
 
-        public Task<IQueryable<T>> GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<T> GetByIdAsync(string id)
-        {
-            return await GetByIdAsync(id);
-        }
 
         public async Task<bool> RemoveAsync(T entity)
         {

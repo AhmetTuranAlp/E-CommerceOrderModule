@@ -54,8 +54,8 @@ namespace E_CommerceOrderModule.ConsumerWorker
 
         public void GetReciver(BasicDeliverEventArgs @event)
         {
-            var user = JsonSerializer.Deserialize<User>(Encoding.UTF8.GetString(@event.Body.ToArray()));
-            if (user != null)
+            var basketRequest = JsonSerializer.Deserialize<BasketRequestDTO>(Encoding.UTF8.GetString(@event.Body.ToArray()));
+            if (basketRequest != null)
             {
                 #region DependencyInjection
                 var _serviceProvider = DIOperation.ServiceProviderInjection();
@@ -65,11 +65,9 @@ namespace E_CommerceOrderModule.ConsumerWorker
                 var _saleService = _serviceProvider.GetService<ISaleService>();
                 #endregion
 
-                var basketList = _basketService.GetAllBasketAsync().Result;
-                if (basketList.ResultStatus && basketList.ResultObject.Count > 0)
+                var baskets = _basketService.GetAllInBasketAsync(basketRequest.UserCode).Result;
+                if (baskets.ResultStatus && baskets.ResultObject.Count > 0)
                 {
-                    var baskets = basketList.ResultObject.Where(x => x.UserCode == user.Id.ToString()).ToList();
-
                     #region Ödeme Modeline Bilgiler Set Ediliyor.
                     SalesDTO sales = new SalesDTO()
                     {
@@ -83,7 +81,7 @@ namespace E_CommerceOrderModule.ConsumerWorker
 
                     var productList = _productService.GetAllProductAsync().Result;
 
-                    foreach (var x in baskets)
+                    foreach (var x in baskets.ResultObject)
                     {
                         #region Ürün Stok Bilgisi Güncelleniyor.
                         if (productList.ResultStatus && productList.ResultObject.Count > 0)
@@ -98,7 +96,7 @@ namespace E_CommerceOrderModule.ConsumerWorker
                         #endregion
 
                         #region Sepetdeki Ürün Satış İşleminden Dolayı Statusu Silindiye Çekiliyor.
-                        x.Status = ModelEnumsDTO.Status.Deleted;
+                        x.Status = ModelEnumsDTO.Status.Sale;
                         _basketService.UpdateBasket(x);
                         #endregion
 
@@ -106,7 +104,7 @@ namespace E_CommerceOrderModule.ConsumerWorker
                         sales.TotalPrice += x.Price * x.Quantity;
                         sales.PaymentType = "Kredi Kartı (Tek Çekim)";
                         sales.TotalQuantity += x.Quantity;
-                        sales.UserCode = user.Id.ToString();
+                        sales.UserCode = basketRequest.UserCode;
 
                         var userDto = _userService.GetUserAsync().Result;
                         if (userDto.ResultStatus)

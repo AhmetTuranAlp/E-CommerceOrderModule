@@ -26,6 +26,9 @@ namespace E_CommerceOrderModule.Repository.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("BasketId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -167,8 +170,8 @@ namespace E_CommerceOrderModule.Repository.Migrations
                             ShortDescription = "P1",
                             Status = 3,
                             Stock = 100,
-                            UpdateDate = new DateTime(2022, 2, 8, 17, 22, 44, 137, DateTimeKind.Local).AddTicks(4812),
-                            UploadDate = new DateTime(2022, 2, 8, 17, 22, 44, 141, DateTimeKind.Local).AddTicks(2011)
+                            UpdateDate = new DateTime(2022, 2, 9, 0, 43, 32, 54, DateTimeKind.Local).AddTicks(1825),
+                            UploadDate = new DateTime(2022, 2, 9, 0, 43, 32, 55, DateTimeKind.Local).AddTicks(5823)
                         },
                         new
                         {
@@ -186,8 +189,8 @@ namespace E_CommerceOrderModule.Repository.Migrations
                             ShortDescription = "P2",
                             Status = 3,
                             Stock = 100,
-                            UpdateDate = new DateTime(2022, 2, 8, 17, 22, 44, 142, DateTimeKind.Local).AddTicks(6745),
-                            UploadDate = new DateTime(2022, 2, 8, 17, 22, 44, 142, DateTimeKind.Local).AddTicks(6769)
+                            UpdateDate = new DateTime(2022, 2, 9, 0, 43, 32, 56, DateTimeKind.Local).AddTicks(6827),
+                            UploadDate = new DateTime(2022, 2, 9, 0, 43, 32, 56, DateTimeKind.Local).AddTicks(6850)
                         },
                         new
                         {
@@ -205,8 +208,8 @@ namespace E_CommerceOrderModule.Repository.Migrations
                             ShortDescription = "P3",
                             Status = 3,
                             Stock = 100,
-                            UpdateDate = new DateTime(2022, 2, 8, 17, 22, 44, 142, DateTimeKind.Local).AddTicks(6844),
-                            UploadDate = new DateTime(2022, 2, 8, 17, 22, 44, 142, DateTimeKind.Local).AddTicks(6849)
+                            UpdateDate = new DateTime(2022, 2, 9, 0, 43, 32, 56, DateTimeKind.Local).AddTicks(6929),
+                            UploadDate = new DateTime(2022, 2, 9, 0, 43, 32, 56, DateTimeKind.Local).AddTicks(6934)
                         });
                 });
 

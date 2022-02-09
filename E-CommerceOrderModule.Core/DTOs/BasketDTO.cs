@@ -9,6 +9,8 @@ namespace E_CommerceOrderModule.Core.DTOs
 {
     public class BasketDTO : BaseEntityDTO
     {
+        public string BasketId { get; set; }
+
         private decimal _price;
         public decimal Price
         {

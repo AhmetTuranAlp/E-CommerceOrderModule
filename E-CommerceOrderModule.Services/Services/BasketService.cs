@@ -8,6 +8,7 @@ using E_CommerceOrderModule.Core.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,16 +27,15 @@ namespace E_CommerceOrderModule.Services.Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<Result<List<BasketDTO>>> GetAllBasketAsync()
+        public async Task<Result<List<BasketDTO>>> GetAllInBasketAsync(string userId)
         {
             Result<List<BasketDTO>> result = new Result<List<BasketDTO>>();
             try
             {
-                var baskets = await _basketRepository.GetAllAsync();
+                var baskets = await _basketRepository.GetAllAsync(x => x.Status == ModelEnums.Status.InBasket && x.UserCode == userId);
                 if (baskets.ToList().Count > 0)
                 {
-                    var basketList = baskets.ToList().Where(x => x.Status != ModelEnums.Status.Deleted);
-                    result.ResultObject = _mapper.Map<List<BasketDTO>>(basketList.ToList());
+                    result.ResultObject = _mapper.Map<List<BasketDTO>>(baskets.ToList());
                     result.SetTrue();
                 }
                 else
@@ -51,13 +51,36 @@ namespace E_CommerceOrderModule.Services.Services
             return result;
         }
 
-        public async Task<Result<BasketDTO>> GetBasket(int userId, string productCode)
+        public async Task<Result<List<BasketDTO>>> GetAllActiveBasketAsync(string userId)
+        {
+            Result<List<BasketDTO>> result = new Result<List<BasketDTO>>();
+            try
+            {
+                var baskets = await _basketRepository.GetAllAsync(x => x.Status == ModelEnums.Status.Active && x.UserCode == userId);
+                if (baskets.ToList().Count > 0)
+                {
+                    result.ResultObject = _mapper.Map<List<BasketDTO>>(baskets.ToList());
+                    result.SetTrue();
+                }
+                else
+                    result.SetFalse();
+
+                return result;
+            }
+            catch (Exception)
+            {
+                result.SetFalse();
+                result.ResultMessage = StaticValue._defaultErrorMessage;
+            }
+            return result;
+        }
+
+        public async Task<Result<BasketDTO>> GetBasketProduct(string userId, string productCode)
         {
             Result<BasketDTO> result = new Result<BasketDTO>();
             try
             {
-                var basketList = await _basketRepository.GetAllAsync();
-                var basket = basketList.Where(x => x.Status != ModelEnums.Status.Deleted && x.UserCode == userId.ToString() && x.ProductCode == productCode).FirstOrDefault();
+                var basket = await _basketRepository.GetAsync(x => x.Status == ModelEnums.Status.InBasket && x.UserCode == userId && x.ProductCode == productCode);
                 if (basket != null)
                 {
                     result.ResultObject = _mapper.Map<BasketDTO>(basket);
@@ -83,13 +106,6 @@ namespace E_CommerceOrderModule.Services.Services
                 Basket entity = null;
                 entity = _mapper.Map<Basket>(basket);
                 _basketRepository.UpdateAsync(entity);
-
-
-
-                //_basketRepository.RemoveAsync(entity);
-                //await _unitOfWork.CommitAsync();
-                //entity.Id = 0;
-                //await _basketRepository.CreateAsync(entity);
                 await _unitOfWork.CommitAsync();
                 result.ResultObject = true;
                 result.SetTrue();
@@ -110,7 +126,7 @@ namespace E_CommerceOrderModule.Services.Services
                 Basket entity = null;
                 entity = _mapper.Map<Basket>(basket);
                 _basketRepository.RemoveAsync(entity);
-                await _unitOfWork.CommitAsync();       
+                await _unitOfWork.CommitAsync();
                 result.ResultObject = true;
                 result.SetTrue();
             }
@@ -127,14 +143,14 @@ namespace E_CommerceOrderModule.Services.Services
             Result<bool> result = new Result<bool>();
             try
             {
-                basket.Status = ModelEnumsDTO.Status.Active;
+                basket.Status = basket.Status;
                 basket.UpdateDate = DateTime.Now;
                 basket.UploadDate = DateTime.Now;
 
                 Basket entity = null;
                 entity = _mapper.Map<Basket>(basket);
                 await _basketRepository.CreateAsync(entity);
-                await _unitOfWork.CommitAsync();       
+                await _unitOfWork.CommitAsync();
                 result.ResultObject = true;
                 result.SetTrue();
             }

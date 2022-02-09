@@ -13,7 +13,7 @@ namespace E_CommerceOrderModule.Core.Asbtract.Services
     {
         Task<Result<List<ProductDTO>>> GetAllProductAsync();
 
-        Task<Result<ProductDTO>> GetProductAsync(int id);
+        Task<Result<ProductDTO>> GetProductAsync(string productId);
         Task<Result<bool>> UpdateProduct(ProductDTO product);
     }
 }

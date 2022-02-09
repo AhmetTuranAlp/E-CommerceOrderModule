@@ -30,11 +30,10 @@
                         <thead>
                             <tr>
                                 <th class="hidden-xs">ID</th>
-                                <th>ProductId</th>
+                                <th>Ürün Kodu</th>
                                 <th>Adı</th>
                                 <th>Fiyat</th>
                                 <th>Adet</th>
-                                <th>Tarih</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -48,7 +47,7 @@
                                         <td>@item.ProductName</td>
                                         <td>@item.Price TL</td>
                                         <td>@item.Quantity</td>
-                                        <td>@String.Format("{0:dd MM yyyy}", item.UpdateDate)</td>
+                                        
                                     </tr>
                                     TotalPrice += @Convert.ToDecimal(Convert.ToInt32(item.Price * item.Quantity));
                                     TotalProduct += item.Quantity;
