@@ -16,6 +16,7 @@ namespace E_CommerceOrderModule.Services.Mapping
             CreateMap<Basket, BasketDTO>().ReverseMap();
             CreateMap<Product, ProductDTO>().ReverseMap();
             CreateMap<Sales, SalesDTO>().ReverseMap();
+            CreateMap<OrderProduct, OrderProductDTO>().ReverseMap();
             CreateMap<User, UserDTO>();
 
             

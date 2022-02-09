@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace E_CommerceOrderModule.Core.Asbtract.Services
 {
-    public interface IUserService : IService<User>
+    public interface IOrderProductService : IService<OrderProduct>
     {
-        Task<Result<UserDTO>> GetUserAsync();
+        Task<Result<bool>> CreateOrderProduct(OrderProductDTO orderProduct);
     }
 }

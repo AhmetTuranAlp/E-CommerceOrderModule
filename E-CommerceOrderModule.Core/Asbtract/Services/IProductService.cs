@@ -12,7 +12,6 @@ namespace E_CommerceOrderModule.Core.Asbtract.Services
     public interface IProductService : IService<Product>
     {
         Task<Result<List<ProductDTO>>> GetAllProductAsync();
-
         Task<Result<ProductDTO>> GetProductAsync(string productId);
         Task<Result<bool>> UpdateProduct(ProductDTO product);
     }

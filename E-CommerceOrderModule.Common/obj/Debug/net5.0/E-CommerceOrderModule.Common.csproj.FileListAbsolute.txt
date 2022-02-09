@@ -26,7 +26,6 @@ C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Common\bin\Debug\ne
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Common\bin\Debug\net5.0\E-CommerceOrderModule.Common.dll
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Common\bin\Debug\net5.0\ref\E-CommerceOrderModule.Common.dll
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Common\bin\Debug\net5.0\E-CommerceOrderModule.Common.pdb
-C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.csproj.AssemblyReference.cache
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.GeneratedMSBuildEditorConfig.editorconfig
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.AssemblyInfoInputs.cache
 C:\GithubProject\E-CommerceOrderModule\E-CommerceOrderModule.Common\obj\Debug\net5.0\E-CommerceOrderModule.Common.AssemblyInfo.cs

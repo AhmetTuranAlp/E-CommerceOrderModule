@@ -44,7 +44,7 @@ namespace E_CommerceOrderModule.ConsumerWorker
         {
             var consumer = new EventingBasicConsumer(_channel);
             _channel.QueueDeclare(RabbitMQClientService.QueueName, true, false, false, null);
-            _channel.BasicConsume(RabbitMQClientService.QueueName, false, consumer);
+            _channel.BasicConsume(RabbitMQClientService.QueueName, false, consumer);            
             consumer.Received += (model, e) =>
             {
                 GetReciver(e);
@@ -63,19 +63,19 @@ namespace E_CommerceOrderModule.ConsumerWorker
                 var _productService = _serviceProvider.GetService<IProductService>();
                 var _userService = _serviceProvider.GetService<IUserService>();
                 var _saleService = _serviceProvider.GetService<ISaleService>();
+                var _orderProductService = _serviceProvider.GetService<IOrderProductService>();
                 #endregion
 
-                var baskets = _basketService.GetAllInBasketAsync(basketRequest.UserCode).Result;
+                var baskets = _basketService.GetAllSaleAsync(basketRequest.UserCode, basketRequest.BasketId).Result;
                 if (baskets.ResultStatus && baskets.ResultObject.Count > 0)
                 {
                     #region Ödeme Modeline Bilgiler Set Ediliyor.
                     SalesDTO sales = new SalesDTO()
                     {
-                        OrderNumber = Operations.UniqueRandom(1, 9, 10),
+                        OrderNumber = basketRequest.BasketId,
                         Status = ModelEnumsDTO.Status.Active,
                         UploadDate = DateTime.Now,
-                        UpdateDate = DateTime.Now,
-
+                        UpdateDate = DateTime.Now
                     };
                     #endregion
 
@@ -91,12 +91,27 @@ namespace E_CommerceOrderModule.ConsumerWorker
                             {
                                 product.Stock -= x.Quantity;
                                 var res = _productService.UpdateProduct(product).Result;
+                                if (res.ResultStatus)
+                                {
+                                    OrderProductDTO orderProduct = new OrderProductDTO()
+                                    {
+                                        OrderNumber = sales.OrderNumber,
+                                        Name = product.Name,
+                                        ProductId = product.ProductId,
+                                        MarketPrice = product.MarketPrice,
+                                        SalePrice = product.SalePrice,
+                                        Status = ModelEnumsDTO.Status.Active
+                                    };
+
+                                    _orderProductService.CreateOrderProduct(orderProduct);
+                                }
                             }
+                           
                         }
                         #endregion
 
                         #region Sepetdeki Ürün Satış İşleminden Dolayı Statusu Silindiye Çekiliyor.
-                        x.Status = ModelEnumsDTO.Status.Sale;
+                        x.Status = ModelEnumsDTO.Status.SaleFinish;
                         _basketService.UpdateBasket(x);
                         #endregion
 
@@ -120,7 +135,7 @@ namespace E_CommerceOrderModule.ConsumerWorker
                     {
                         string log = $"Sipariş Bilgileri: Sipariş Numarası: {sales.OrderNumber} Toplam Fiyat: {sales.TotalPrice} Toplam Adet: {sales.TotalQuantity}";
                         _logger.LogInformation(log);
-                        Console.Clear();
+                        //Console.Clear();
                         Console.WriteLine(log);
                         _channel.BasicAck(@event.DeliveryTag, false);
 
@@ -128,7 +143,7 @@ namespace E_CommerceOrderModule.ConsumerWorker
                 }
 
             }
-        
+
         }
     }
 }

@@ -25,17 +25,7 @@ namespace E_CommerceOrderModule.Repository.Concrete.Repositories
         {
             await _dbSet.AddAsync(entity);
         }
-        protected async virtual Task<IQueryable<T>> GetQueryable(Expression<Func<T, bool>> filter = null)
-        {
-            IQueryable<T> query = _dbSet.AsNoTracking().AsQueryable(); 
-
-            if (filter != null)
-            {
-                query = query.Where(filter);
-            }
-
-            return query;
-        }
+  
 
         protected async virtual Task<T> Get(Expression<Func<T, bool>> filter = null)
         {
@@ -49,7 +39,7 @@ namespace E_CommerceOrderModule.Repository.Concrete.Repositories
             return query.FirstOrDefault();
         }
 
-        protected async virtual Task<IQueryable<T>> GetQueryable(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, int? skip = null, int? take = null)
+        protected async virtual Task<IQueryable<T>> GetQueryable(Expression<Func<T, bool>> filter = null)
         {
             IQueryable<T> query = _dbSet.AsNoTracking().AsQueryable();
 
@@ -58,33 +48,8 @@ namespace E_CommerceOrderModule.Repository.Concrete.Repositories
                 query = query.Where(filter);
             }
 
-            if (orderBy != null)
-            {
-                query = orderBy(query);
-            }
-
-            if (skip.HasValue)
-            {
-                query = query.Skip(skip.Value);
-            }
-
-            if (take.HasValue)
-            {
-                query = query.Take(take.Value);
-            }
-
             return query;
         }
-
-        //public async Task<IQueryable<T>> GetAllAsync()
-        //{
-        //    return _dbSet.AsNoTracking().AsQueryable();
-        //}
-
-        //public async Task<T> GetByIdAsync(int id)
-        //{
-        //    return await _dbSet.FindAsync(id);
-        //}
 
         public void RemoveAsync(T entity)
         {

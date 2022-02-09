@@ -32,7 +32,6 @@ namespace E_CommerceOrderModule.ConsumerWorker
             {
                 configuration.Enrich.FromLogContext()
                         .Enrich.WithMachineName()
-                        //.WriteTo.Console()
                         .WriteTo.Elasticsearch(
                             new ElasticsearchSinkOptions(node: new Uri(context.Configuration["ElasticConfiguration:Uri"]))
                             {

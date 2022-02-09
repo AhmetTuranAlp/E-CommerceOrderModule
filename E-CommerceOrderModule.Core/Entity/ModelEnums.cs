@@ -22,7 +22,9 @@ namespace E_CommerceOrderModule.Core.Entity
             [Description("Sepet")]
             InBasket = 4,
             [Description("Satis")]
-            Sale = 5
+            Sale = 5,
+            [Description("Satis Sonlandı")]
+            SaleFinish = 6
         }
 
         public enum PaymentType : int

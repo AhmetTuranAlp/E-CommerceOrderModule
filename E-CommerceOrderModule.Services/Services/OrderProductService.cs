@@ -13,31 +13,35 @@ using System.Threading.Tasks;
 
 namespace E_CommerceOrderModule.Services.Services
 {
-    public class SaleService : Service<Sales>, ISaleService
+    public class OrderProductService : Service<OrderProduct>, IOrderProductService
     {
-        private readonly ISaleRepository _saleRepository;
+        private readonly IOrderProductRepository _orderProductRepository;
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
-        public SaleService(IGenericRepository<Sales> genericRepository, IUnitOfWork unitOfWork, IMapper mapper, ISaleRepository saleRepository) : base(genericRepository, unitOfWork)
+        public OrderProductService(IGenericRepository<OrderProduct> genericRepository, IUnitOfWork unitOfWork, IMapper mapper, IOrderProductRepository orderProductRepository) : base(genericRepository, unitOfWork)
         {
-            _saleRepository = saleRepository;
+            _orderProductRepository = orderProductRepository;
             _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<Result<bool>> CreateSales(SalesDTO sales)
+        public async Task<Result<bool>> CreateOrderProduct(OrderProductDTO orderProduct)
         {
             Result<bool> result = new Result<bool>();
             try
             {
-                Sales entity = null;
-                entity =  _mapper.Map<Sales>(sales);
-                await _saleRepository.CreateAsync(entity);
+                orderProduct.Status = orderProduct.Status;
+                orderProduct.UpdateDate = DateTime.Now;
+                orderProduct.UploadDate = DateTime.Now;
+
+                OrderProduct entity = null;
+                entity = _mapper.Map<OrderProduct>(orderProduct);
+                await _orderProductRepository.CreateAsync(entity);
                 await _unitOfWork.CommitAsync();
                 result.ResultObject = true;
                 result.SetTrue();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 result.SetFalse();
                 result.ResultMessage = StaticValue._defaultErrorMessage;

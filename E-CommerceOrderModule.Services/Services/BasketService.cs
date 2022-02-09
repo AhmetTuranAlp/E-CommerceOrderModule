@@ -51,6 +51,31 @@ namespace E_CommerceOrderModule.Services.Services
             return result;
         }
 
+        public async Task<Result<List<BasketDTO>>> GetAllSaleAsync(string userId, string basketId)
+        {
+            Result<List<BasketDTO>> result = new Result<List<BasketDTO>>();
+            try
+            {
+                var baskets = await _basketRepository.GetAllAsync(x => x.Status == ModelEnums.Status.Sale && x.UserCode == userId && x.BasketId == basketId);
+                if (baskets.ToList().Count > 0)
+                {
+                    result.ResultObject = _mapper.Map<List<BasketDTO>>(baskets.ToList());
+                    result.SetTrue();
+                }
+                else
+                    result.SetFalse();
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                result.SetFalse();
+                result.ResultMessage = StaticValue._defaultErrorMessage;
+            }
+            return result;
+        }
+
+
         public async Task<Result<List<BasketDTO>>> GetAllActiveBasketAsync(string userId)
         {
             Result<List<BasketDTO>> result = new Result<List<BasketDTO>>();

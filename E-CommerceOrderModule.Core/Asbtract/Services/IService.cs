@@ -10,9 +10,7 @@ namespace E_CommerceOrderModule.Core.Asbtract.Services
     public interface IService<T> where T : class
     {
         Task<T> CreateAsync(T entity);
-
         Task<bool> RemoveAsync(T entity);
-
         Task<bool> UpdateAsync(T entity);
 
     }

@@ -13,6 +13,7 @@ namespace E_CommerceOrderModule.Core.Asbtract.Services
     public interface IBasketService : IService<Basket>
     {
         Task<Result<List<BasketDTO>>> GetAllInBasketAsync(string userId);
+        Task<Result<List<BasketDTO>>> GetAllSaleAsync(string userId, string basketId);
         Task<Result<List<BasketDTO>>> GetAllActiveBasketAsync(string userId);
         Task<Result<BasketDTO>> GetBasketProduct(string userId, string productCode);
         Task<Result<bool>> UpdateBasket(BasketDTO basket);
