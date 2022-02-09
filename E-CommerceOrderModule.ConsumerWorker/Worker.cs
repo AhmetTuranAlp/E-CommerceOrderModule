@@ -63,7 +63,6 @@ namespace E_CommerceOrderModule.ConsumerWorker
                 var _productService = _serviceProvider.GetService<IProductService>();
                 var _userService = _serviceProvider.GetService<IUserService>();
                 var _saleService = _serviceProvider.GetService<ISaleService>();
-                var _orderProductService = _serviceProvider.GetService<IOrderProductService>();
                 #endregion
 
                 var baskets = _basketService.GetAllSaleAsync(basketRequest.UserCode, basketRequest.BasketId).Result;
@@ -75,7 +74,8 @@ namespace E_CommerceOrderModule.ConsumerWorker
                         OrderNumber = basketRequest.BasketId,
                         Status = ModelEnumsDTO.Status.Active,
                         UploadDate = DateTime.Now,
-                        UpdateDate = DateTime.Now
+                        UpdateDate = DateTime.Now,
+                        IsLog = true
                     };
                     #endregion
 
@@ -90,21 +90,7 @@ namespace E_CommerceOrderModule.ConsumerWorker
                             if (product != null)
                             {
                                 product.Stock -= x.Quantity;
-                                var res = _productService.UpdateProduct(product).Result;
-                                if (res.ResultStatus)
-                                {
-                                    OrderProductDTO orderProduct = new OrderProductDTO()
-                                    {
-                                        OrderNumber = sales.OrderNumber,
-                                        Name = product.Name,
-                                        ProductId = product.ProductId,
-                                        MarketPrice = product.MarketPrice,
-                                        SalePrice = product.SalePrice,
-                                        Status = ModelEnumsDTO.Status.Active
-                                    };
-
-                                    _orderProductService.CreateOrderProduct(orderProduct);
-                                }
+                                var res = _productService.UpdateProduct(product).Result;                               
                             }
                            
                         }

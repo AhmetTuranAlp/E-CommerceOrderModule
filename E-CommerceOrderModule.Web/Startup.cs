@@ -46,12 +46,10 @@ namespace E_CommerceOrderModule.Web
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient(typeof(IProductRepository), typeof(ProductRespository));
             services.AddTransient(typeof(IUserRepository), typeof(UserRepository));
-            services.AddTransient(typeof(IOrderProductRepository), typeof(OrderProductRepository));
             services.AddTransient(typeof(IBasketRepository), typeof(BasketRepository));
             services.AddTransient(typeof(ISaleRepository), typeof(SaleRepository));
             services.AddTransient(typeof(IService<>), typeof(Service<>));
             services.AddTransient(typeof(IProductService), typeof(ProductService));
-            services.AddTransient(typeof(IOrderProductService), typeof(OrderProductService));
             services.AddTransient(typeof(IUserService), typeof(UserService));
             services.AddTransient(typeof(IBasketService), typeof(BasketService));
             services.AddTransient(typeof(ISaleService), typeof(SaleService));

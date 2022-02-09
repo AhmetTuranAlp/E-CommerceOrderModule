@@ -58,42 +58,6 @@ namespace E_CommerceOrderModule.Repository.Migrations
                     b.ToTable("Baskets");
                 });
 
-            modelBuilder.Entity("E_CommerceOrderModule.Core.Entity.OrderProduct", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<decimal>("MarketPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OrderNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ProductId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("SalePrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("UploadDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OrderProducts");
-                });
-
             modelBuilder.Entity("E_CommerceOrderModule.Core.Entity.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -170,8 +134,8 @@ namespace E_CommerceOrderModule.Repository.Migrations
                             ShortDescription = "P1",
                             Status = 3,
                             Stock = 100,
-                            UpdateDate = new DateTime(2022, 2, 9, 0, 43, 32, 54, DateTimeKind.Local).AddTicks(1825),
-                            UploadDate = new DateTime(2022, 2, 9, 0, 43, 32, 55, DateTimeKind.Local).AddTicks(5823)
+                            UpdateDate = new DateTime(2022, 2, 9, 17, 11, 50, 495, DateTimeKind.Local).AddTicks(2296),
+                            UploadDate = new DateTime(2022, 2, 9, 17, 11, 50, 496, DateTimeKind.Local).AddTicks(3489)
                         },
                         new
                         {
@@ -189,8 +153,8 @@ namespace E_CommerceOrderModule.Repository.Migrations
                             ShortDescription = "P2",
                             Status = 3,
                             Stock = 100,
-                            UpdateDate = new DateTime(2022, 2, 9, 0, 43, 32, 56, DateTimeKind.Local).AddTicks(6827),
-                            UploadDate = new DateTime(2022, 2, 9, 0, 43, 32, 56, DateTimeKind.Local).AddTicks(6850)
+                            UpdateDate = new DateTime(2022, 2, 9, 17, 11, 50, 497, DateTimeKind.Local).AddTicks(2085),
+                            UploadDate = new DateTime(2022, 2, 9, 17, 11, 50, 497, DateTimeKind.Local).AddTicks(2101)
                         },
                         new
                         {
@@ -208,8 +172,8 @@ namespace E_CommerceOrderModule.Repository.Migrations
                             ShortDescription = "P3",
                             Status = 3,
                             Stock = 100,
-                            UpdateDate = new DateTime(2022, 2, 9, 0, 43, 32, 56, DateTimeKind.Local).AddTicks(6929),
-                            UploadDate = new DateTime(2022, 2, 9, 0, 43, 32, 56, DateTimeKind.Local).AddTicks(6934)
+                            UpdateDate = new DateTime(2022, 2, 9, 17, 11, 50, 497, DateTimeKind.Local).AddTicks(2169),
+                            UploadDate = new DateTime(2022, 2, 9, 17, 11, 50, 497, DateTimeKind.Local).AddTicks(2173)
                         });
                 });
 

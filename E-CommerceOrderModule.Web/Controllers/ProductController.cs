@@ -64,10 +64,11 @@ namespace E_CommerceOrderModule.Web.Controllers
         {
             try
             {
+                var userId = this.HttpContext.Session.GetString("UserId");
                 var product = await _productService.GetProductAsync(id); // Ürün Çekiliyor.
                 if (product.ResultObject != null && product.ResultStatus)
                 {
-                    var basketProduct = await _basketService.GetBasketProduct(this.HttpContext.Session.GetString("UserId"), product.ResultObject.ProductId); //İlgili Ürün Sepet de Olup Olmadıgına Bakılıyor.
+                    var basketProduct = await _basketService.GetBasketProduct(userId, product.ResultObject.ProductId); //İlgili Ürün Sepet de Olup Olmadıgına Bakılıyor.
                     if (basketProduct.ResultStatus)
                     {
                         //Ürün Sepet de Varsa
@@ -78,7 +79,7 @@ namespace E_CommerceOrderModule.Web.Controllers
                             if (result.ResultStatus)
                             {
                                 #region Sepet Session'ı Güncelleniyor.
-                                var basketAll = await _basketService.GetAllInBasketAsync(this.HttpContext.Session.GetString("UserId"));
+                                var basketAll = await _basketService.GetAllInBasketAsync(userId);
                                 if (basketAll.ResultStatus)
                                 {
                                     HttpContext.Session.Set<List<BasketDTO>>("BasketCard", basketAll.ResultObject.ToList());
@@ -98,7 +99,7 @@ namespace E_CommerceOrderModule.Web.Controllers
                     else
                     {
                         string basketId = string.Empty;
-                        var basketAll = await _basketService.GetAllInBasketAsync(this.HttpContext.Session.GetString("UserId"));
+                        var basketAll = await _basketService.GetAllInBasketAsync(userId);
                         if (basketAll.ResultStatus && basketAll.ResultObject.Count > 0)
                             basketId = basketAll.ResultObject.FirstOrDefault().BasketId;
                         else
@@ -116,14 +117,14 @@ namespace E_CommerceOrderModule.Web.Controllers
                                 Quantity = 1,
                                 UpdateDate = DateTime.Now,
                                 UploadDate = DateTime.Now,
-                                UserCode = this.HttpContext.Session.GetString("UserId"),
+                                UserCode = userId,
                                 ProductCode = product.ResultObject.ProductId
                             };
                             var result = await _basketService.CreateBasket(basketDTO);
                             if (result.ResultStatus)
                             {
                                 #region Sepet Session'ı Güncelleniyor.
-                                 basketAll = await _basketService.GetAllInBasketAsync(this.HttpContext.Session.GetString("UserId"));
+                                 basketAll = await _basketService.GetAllInBasketAsync(userId);
                                 if (basketAll.ResultStatus)
                                 {
                                     HttpContext.Session.Set<List<BasketDTO>>("BasketCard", basketAll.ResultObject.ToList());

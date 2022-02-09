@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace E_CommerceOrderModule.Repository.Migrations
 {
-    public partial class ECOrderModule : Migration
+    public partial class ECOrderModuleDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -26,26 +26,6 @@ namespace E_CommerceOrderModule.Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Baskets", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "OrderProducts",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    OrderNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProductId = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    MarketPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    SalePrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false),
-                    UploadDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_OrderProducts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -118,26 +98,23 @@ namespace E_CommerceOrderModule.Repository.Migrations
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "BrandName", "CategoryName", "CurrencyType", "Description", "Image", "KDV", "MarketPrice", "Name", "ProductId", "SalePrice", "ShortDescription", "Status", "Stock", "UpdateDate", "UploadDate" },
-                values: new object[] { 1, "B1", "C1", 0, "P1", "", 1m, 100m, "P1", "P100", 100m, "P1", 3, 100, new DateTime(2022, 2, 9, 0, 43, 32, 54, DateTimeKind.Local).AddTicks(1825), new DateTime(2022, 2, 9, 0, 43, 32, 55, DateTimeKind.Local).AddTicks(5823) });
+                values: new object[] { 1, "B1", "C1", 0, "P1", "", 1m, 100m, "P1", "P100", 100m, "P1", 3, 100, new DateTime(2022, 2, 9, 17, 11, 50, 495, DateTimeKind.Local).AddTicks(2296), new DateTime(2022, 2, 9, 17, 11, 50, 496, DateTimeKind.Local).AddTicks(3489) });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "BrandName", "CategoryName", "CurrencyType", "Description", "Image", "KDV", "MarketPrice", "Name", "ProductId", "SalePrice", "ShortDescription", "Status", "Stock", "UpdateDate", "UploadDate" },
-                values: new object[] { 2, "B2", "C2", 0, "P2", "", 1m, 200m, "P2", "P200", 200m, "P2", 3, 100, new DateTime(2022, 2, 9, 0, 43, 32, 56, DateTimeKind.Local).AddTicks(6827), new DateTime(2022, 2, 9, 0, 43, 32, 56, DateTimeKind.Local).AddTicks(6850) });
+                values: new object[] { 2, "B2", "C2", 0, "P2", "", 1m, 200m, "P2", "P200", 200m, "P2", 3, 100, new DateTime(2022, 2, 9, 17, 11, 50, 497, DateTimeKind.Local).AddTicks(2085), new DateTime(2022, 2, 9, 17, 11, 50, 497, DateTimeKind.Local).AddTicks(2101) });
 
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "BrandName", "CategoryName", "CurrencyType", "Description", "Image", "KDV", "MarketPrice", "Name", "ProductId", "SalePrice", "ShortDescription", "Status", "Stock", "UpdateDate", "UploadDate" },
-                values: new object[] { 3, "B3", "C3", 0, "P3", "", 1m, 300m, "P3", "P300", 300m, "P3", 3, 100, new DateTime(2022, 2, 9, 0, 43, 32, 56, DateTimeKind.Local).AddTicks(6929), new DateTime(2022, 2, 9, 0, 43, 32, 56, DateTimeKind.Local).AddTicks(6934) });
+                values: new object[] { 3, "B3", "C3", 0, "P3", "", 1m, 300m, "P3", "P300", 300m, "P3", 3, 100, new DateTime(2022, 2, 9, 17, 11, 50, 497, DateTimeKind.Local).AddTicks(2169), new DateTime(2022, 2, 9, 17, 11, 50, 497, DateTimeKind.Local).AddTicks(2173) });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Baskets");
-
-            migrationBuilder.DropTable(
-                name: "OrderProducts");
 
             migrationBuilder.DropTable(
                 name: "Products");

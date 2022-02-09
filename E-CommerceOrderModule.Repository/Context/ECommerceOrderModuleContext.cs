@@ -21,7 +21,6 @@ namespace E_CommerceOrderModule.Repository.Context
         public DbSet<Product> Products { get; set; }
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<Sales> Sales { get; set; }
-        public DbSet<OrderProduct> OrderProducts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
